@@ -1,0 +1,19 @@
+mat-card{
+  min-width:20em
+}
+example-icon {
+  padding: 0 14px;
+  
+   position: absolute;
+  right: 0px;
+}
+.filler{
+  display:flex;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.form-group{
+  position: relative;
+  float:right; 
+}

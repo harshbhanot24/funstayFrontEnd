@@ -1,0 +1,8 @@
+<br><br>
+<div  class="flex-container"  >
+  <ng-container *ngFor="let card of cards"><app-card [card]='card' (delete)=deleteCard($event) class="margin-2"></app-card></ng-container>
+</div>
+
+ <button mat-mini-fab routerLink='/add' class="float">
+    <mat-icon [inline]="true" aria-label="Example icon-button with a heart icon">add</mat-icon>
+  </button>

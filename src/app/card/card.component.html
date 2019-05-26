@@ -1,0 +1,21 @@
+<mat-card @fade-in>
+	<mat-card-title style="font-size:1.3em">
+		{{card.heading}}
+	</mat-card-title>
+	<mat-card-subtitle>Please check item list if its done</mat-card-subtitle>
+	<mat-card-content>
+		<mat-selection-list @flyInOut *ngFor="let card of card.list">
+			<mat-list-option>
+				{{card}}
+			</mat-list-option>
+		</mat-selection-list>
+	</mat-card-content>
+	<mat-card-actions>
+		<div class="filler">
+			<span class="example-spacer"></span>
+   <button mat-icon-button color="accent" [routerLink]="['/add/',card._id]"><mat-icon>edit</mat-icon></button>
+  <button mat-icon-button color="warn" (click)='deleteCard(card._id)'><mat-icon>delete</mat-icon></button>
+  </div>
+ </mat-card-actions>
+</mat-card>
+<br>

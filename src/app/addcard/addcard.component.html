@@ -1,0 +1,23 @@
+
+<mat-card class='cardBox' @fade-in  @flyInOut >
+  <mat-form-field class="example-full-width" >
+    <input matInput placeholder="Card Title" [(ngModel)]="heading" required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Add Item"  #itemInput (keyup.enter)="addItem(itemInput)">
+  </mat-form-field>
+<ul role="list" *ngFor="let item of items">
+  <li role="listitem"  @fade-in @slide @flyInOut (click)="removeItem(item)" >{{ item }}</li>
+  
+</ul>
+
+<mat-card-actions>
+		<div class="filler">
+			<span class="example-spacer"></span>
+ 
+  <button mat-icon-button color="accent" (click)='saveCard()'><mat-icon>save_alt</mat-icon></button>
+  </div>
+ </mat-card-actions>
+</mat-card  >
+
+
