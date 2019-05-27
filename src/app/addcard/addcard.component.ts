@@ -5,10 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import {slide} from './animate';
 import { CardService } from '../card.service';
 import { Router } from '@angular/router';
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+
 @Component({
   selector: 'app-add-card',
   templateUrl: './addcard.component.html',
@@ -59,7 +56,17 @@ items: any[] = [];
        heading:this.heading ,
        list:this.items
      }
-     if(this.heading.length>0)
+     if(this.route.snapshot.paramMap.get("id")){
+        this.service.updateCard(this.route.snapshot.paramMap.get("id"),card).subscribe(
+       (data)=>{
+            this.router.navigate(['/']);
+       },(err)=>{
+         console.log(err)
+       }
+
+     )
+     }
+    else  if(this.heading.length>0)
      this.service.addCard(card).subscribe(
        (data)=>{
             this.router.navigate(['/']);
